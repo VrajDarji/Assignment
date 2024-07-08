@@ -16,10 +16,12 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.h1`
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #333;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 1rem;
 `;
 
 const BlogWrapper = styled.div`
@@ -56,15 +58,20 @@ const BlogWrapper = styled.div`
   }
 `;
 
+const NoBlogsMessage = styled.p`
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  color: #718096;
+`;
+
 export default function Home() {
   const [blogs, setBlogs] = useState<BlogWithUser[]>([]);
   const router = useRouter();
   useEffect(() => {
     const fetchData = async () => {
       const rsp = await getBlogs();
-      console.log(rsp);
       const data = rsp.filter((r: any, idx: any) => idx < 10);
-      console.log(data);
       setBlogs(data);
     };
     fetchData();
@@ -81,17 +88,7 @@ export default function Home() {
           <p>{blog.description}</p>
         </BlogWrapper>
       ))}
-      {blogs.length === 0 && (
-        <p
-          style={{
-            textAlign: "center",
-            padding: "2rem 0",
-            fontSize: "20px",
-          }}
-        >
-          No blogs to show
-        </p>
-      )}
+      {blogs.length === 0 && <NoBlogsMessage>No blogs to show</NoBlogsMessage>}
     </Wrapper>
   );
 }

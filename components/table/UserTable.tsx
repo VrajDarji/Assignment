@@ -94,7 +94,7 @@ const UserTable: React.FC<TableProps> = ({ TData }) => {
   ]);
   return (
     <div className="ag-theme-quartz" style={{ width: "100%", height: "500px" }}>
-      <AgGridReact rowData={TData} columnDefs={cols} />
+      <AgGridReact rowData={TData} columnDefs={cols} pagination={true} />
     </div>
   );
 };

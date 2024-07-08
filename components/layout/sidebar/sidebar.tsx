@@ -54,6 +54,7 @@ const SidebarMenuLinks = styled.button`
   font-weight: 500;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
   &:hover {
     background: #3b9df7;
     color: white;

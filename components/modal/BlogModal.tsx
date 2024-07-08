@@ -7,7 +7,17 @@ import { createBlog, updateBlog } from "@/app/api";
 import { dataTagSymbol, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
-const Modal = styled(AntModal)``;
+const Modal = styled(AntModal)`
+  .ant-modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .ant-modal-body {
+    padding-top: 1rem;
+  }
+`;
 
 const InputWrapper = styled.div`
   display: flex;
@@ -127,7 +137,7 @@ const BlogModal = () => {
           </Form.Item>
         </InputWrapper>
         <InputWrapper>
-          <label htmlFor="">Title</label>
+          <label htmlFor="">Description</label>
           <Form.Item
             name="description"
             rules={[{ required: true, message: "Title is required" }]}

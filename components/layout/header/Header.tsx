@@ -42,8 +42,9 @@ const Avatar = styled(AntAvatar)`
 const InfoWrapper = styled.div`
   padding: 0.25rem;
   display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
   div {
     dispaly: flex;
     flex-direction: column;
@@ -76,12 +77,12 @@ const Nav = () => {
 
     fetchUser();
   }, []);
-  console.log(user);
 
   const items: MenuProps["items"] = [
     {
       label: (
         <InfoWrapper>
+          <Avatar style={{ cursor: "pointer" }}>{user?.username[0]}</Avatar>
           <div>
             <h4>{user?.username}</h4>
             <p>{user?.email}</p>
@@ -112,7 +113,7 @@ const Nav = () => {
     <HeaderWrapper>
       <Title>{pathname === "/" ? "dashboard" : pathname.split("/")[1]}</Title>
       <ActionsWrapper>
-        <Input />
+        <Input.Search placeholder="Search..." enterButton />
         <Dropdown trigger={["click"]} menu={{ items }}>
           <Avatar style={{ cursor: "pointer" }}>{user?.username[0]}</Avatar>
         </Dropdown>
