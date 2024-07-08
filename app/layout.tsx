@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { IBM_Plex_Sans } from "next/font/google";
+import "./globals.scss";
+import ClientSideWrapper from "@/lib/wapper";
+import Layout from "@/components/layout/Layout";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = IBM_Plex_Sans({
+  subsets: ["latin"],
+  preload: true,
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ClientSideWrapper>{children}</ClientSideWrapper>
+      </body>
     </html>
   );
 }

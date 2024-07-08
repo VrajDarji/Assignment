@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  background-color: #dedee6;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+.graviti-form-modal {
+  .ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .ant-modal {
+    width: 400px !important;
+    top: 0px;
+    margin: 0;
+    right: 0;
+    position: absolute;
+    padding-bottom: 0;
+  }
+}
