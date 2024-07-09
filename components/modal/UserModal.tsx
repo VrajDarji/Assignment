@@ -49,7 +49,6 @@ const UserModal = () => {
       message.success("User updated successfully!");
       setOpen("");
       form.resetFields();
-      router.refresh();
     },
     onError: (err) => {
       message.error("Failed to update user");
@@ -69,6 +68,7 @@ const UserModal = () => {
           id: InitialData.user.id,
         };
         mutate(data);
+        router.refresh();
       }
     } catch (error) {
       message.error("Please fix the errors in the form.");

@@ -142,7 +142,7 @@ const BlogModal = () => {
             name="description"
             rules={[{ required: true, message: "Title is required" }]}
           >
-            <Input.TextArea placeholder="Description" wrap="hard" autoSize />
+            <Input.TextArea placeholder="Description" wrap="hard" rows={15} />
           </Form.Item>
         </InputWrapper>
       </Form>

@@ -26,10 +26,12 @@ const SidebarTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #3b9df7;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #efefef;
 `;
 
 const SidebarMenuHeading = styled.p`
@@ -97,7 +99,7 @@ const Sidebar = () => {
   return (
     <SidebarWrapper>
       <SidebarTop>
-        <p>blog site</p>
+        <p>word wave</p>
       </SidebarTop>
       {SidebarLinks.map((link) => (
         <SidebarMenu key={link.header}>

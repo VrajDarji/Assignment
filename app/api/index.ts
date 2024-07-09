@@ -40,7 +40,7 @@ export const getBlog = async (id: number) => {
 };
 
 export const getMyBlogs = async () => {
-  const rsp = await axios.get(`blog/findUserTodos/`);
+  const rsp = await axios.get(`blog/findUserBlogs/`);
   return rsp.data;
 };
 

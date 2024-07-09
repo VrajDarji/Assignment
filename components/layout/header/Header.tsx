@@ -63,7 +63,7 @@ const InfoWrapper = styled.div`
 
 export const handleSignOut = () => {
   document.cookie = `user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; secure; samesite=strict`;
-  window.location.href = `/signin`;
+  window.location.href = `/`;
 };
 
 const Nav = () => {
@@ -94,7 +94,7 @@ const Nav = () => {
     {
       key: 1,
       label: (
-        <Link href={`blogs?mine=true`} style={{ textDecoration: "none" }}>
+        <Link href={`/blogs?mine=true`} style={{ textDecoration: "none" }}>
           <Button type="link">My Blogs</Button>
         </Link>
       ),
